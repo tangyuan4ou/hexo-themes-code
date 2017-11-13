@@ -1,0 +1,7 @@
+menu: 
+  Home: /
+  Archives: /archives
+  About: /about
+  Contact: /contact
+  # 添加链接 Github: https://github.com/ahonn
+  comment_provider: disqus

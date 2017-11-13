@@ -1,0 +1,73 @@
+<!--
+    归档页
+-->
+<%- partial('_partial/menu') %>
+<section class="archiveCntainer">
+    <div class="archiveContent">
+        <div class="tagContainer">
+            <ul class="tagContent"></ul>
+        </div>
+        <div class="archiveSwp">
+        <% for (var i=2019; i>2016; i--) {
+            var label = true;
+            page.posts.each(function (post){ 
+                if (date(post.date, "YYYY").indexOf(i) > -1 && label) {
+                    label = false;
+        %>
+                <div class="titleDate">✒ <%= date(post.date, "YYYY") %></div>
+
+        <%      } 
+                if (date(post.date, "YYYY").indexOf(i) > -1) {
+        %>
+                    <ul class="swap">
+                        <li class="span T"></li>
+                        <li class="span R"></li>
+                        <li class="span B"></li>
+                        <li class="span L"></li>
+                        <div class="content"></div>
+                        <div class="postBg">
+                            <a href="<%- url_for(post.path) %>" class="block"></a>
+                            <h2 class="bTitle"><%= post.title %></h2>
+                            <div class="description">
+                                <p class="date"><%= date(post.date, "MM-DD") %></p>
+                                <%if (post.tags.data.length == 0){
+                                %>
+                                    <span class="tag">tangyuan4ou.github.io</span>
+                                <%    
+                                }%>
+                                <%post.tags.data.forEach(function(tag){ %>
+                                    <span class="tag">#<%= tag.name %></span>
+                                <% }) %>
+                            </div>
+                        </div>
+                    </ul>
+        <%
+                }
+            })
+        }%>
+        </div>
+    <%- partial('_partial/paginator') %>        
+    </div>
+</section>
+
+<script>
+    var height = window.innerHeight - 50;
+    var conHeight = $('.archiveCntainer').height();
+    if ( height > conHeight ) {
+        $('.archiveCntainer').css('height', height)
+    } else {
+        $('.archiveCntainer').css('height', conHeight)
+    }
+    /*
+        调整archive页nav样式
+    */
+    //菜单按钮
+    $('.menu-section').css('position', 'absolute');
+    $('.name').text('tangyuan').css('color', '#ffffff');
+    $('.navBtn').css('background-color', '#ffffff');
+
+    //search
+    $('.search').css({'background':'#161823', 'color': '#ffffff', 'border-color':'#ffffff'});
+    $('.searchBtn').css({'color': '#ffffff'});
+
+</script>

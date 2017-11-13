@@ -1,0 +1,287 @@
+.main {
+  overflow: scroll;
+}
+.postSwp {
+  display: block;
+  width: 100%;
+  position: relative;
+  padding-bottom: 50px;
+}
+.contentBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  background: #161823;
+}
+.particleground {
+  position: absolute;
+}
+.postContainer {
+  position: relative;
+  width: 1200px;
+  margin: 0px auto 0;
+  padding-top: 50px;
+  .contentleft {
+    display: inline-block;
+    width: 760px;
+    margin-top: 10px;
+    margin-left: 40px;
+    padding: 40px;
+    border-radius: 5px;
+    background: rgb(233, 241, 246);
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.125);  
+  }
+  .leftAnim {
+    animation: leftAnim 2s ease;
+    -moz-animation: leftAnim 2s ease;
+    -webkit-animation: leftAnim 2s ease;
+  }
+  @keyframes leftAnim {
+    0%{
+      margin-top: 80px;
+      opacity: 0.2;
+    }
+    100%{
+      margin-top: 10px;
+      opacity: 1;
+    }
+  }
+  .postTitle {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+  }
+  h1 {
+    font-size: 22px;
+  }
+  h2 {
+    font-size: 18px;
+  }
+  
+  .postTime {
+    color: #999999;
+  }
+  .postContent {
+    padding-bottom: 20px;
+    a {
+      text-decoration: none;
+      color: green;
+      cursor: pointer;
+    }
+  }
+  .tagContainer {
+    padding-bottom: 10px;
+    .tagCon {
+      display: inline-block;
+      height: 30px;
+      transition: transform 1s ease;
+      -moz-transition: transform 1s ease;
+      -webkit-transition: transform 1s ease;
+      transform: translateX(0px);
+      -moz-transform: translateX(0px);
+      -webkit-transform: translateX(0px);
+      &:hover {
+        transform: translateX(-10px);
+        -moz-transform: translateX(-10px);
+        -webkit-transform: translateX(-10px);
+      }
+    }
+    p {
+      display: inline-block;
+      margin: 0;
+    }
+    .tagArrow {
+      width: 0;
+      height: 0;
+      border: 15px solid #e9f1f6;  
+      border-right-color: #c7e2de;       
+    }
+    .tag {
+      position: relative;
+      width: 80px;
+      height: 30px;
+      line-height: 30px;
+      background: #c7e2de;
+      transform: translateX(-5px) translateY(-9px);
+      -moz-transform: translateX(-5px) translateY(-9px);
+      -webkit-transform: translateX(-5px) translateY(-9px);
+      a {
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 80px;
+        height: 30px;
+        cursor: pointer;
+      }
+      a:hover {
+        box-shadow: 3px 3px 8px rgba(0,0,0,0.125);
+      }
+    }
+  }
+  .postMessage {
+    position: relative;
+    height: 50px;
+    border-top: 1px solid #cccccc;
+    a {
+      color: #000000;
+      position: absolute;
+      text-decoration: none;
+      display: block;
+      width: 300px;
+      height: 50px;
+    }
+  }
+  .prevContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 380px;
+    height: 50px;
+    margin-top: 20px;
+    text-overflow: ellipsis;
+    white-space: nowrap; 
+    overflow: hidden;
+  }
+  .nextContainer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 380px;
+    height: 50px;
+    margin-top: 20px;
+    text-align: right;
+    text-overflow: ellipsis;
+    white-space: nowrap; 
+    overflow: hidden;
+    a {
+      right: 0;
+    }
+  }
+  .prev,
+  .next {
+    line-height: 50px;
+    font-size: 20px;
+    padding: 0;
+    font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+    transition: padding 0.5s ease-in;
+    text-overflow: ellipsis;
+    white-space: nowrap; 
+    overflow: hidden;
+  }
+  .prev:hover {
+    color: green;
+    text-overflow: ellipsis;
+    white-space: nowrap; 
+    overflow: hidden;
+    padding: 0 0 0 20px;
+  }
+  .next:hover {
+    color: green;
+    text-overflow: ellipsis;
+    white-space: nowrap; 
+    overflow: hidden;
+    padding: 0 20px 0 0px;
+  }
+  .contentRight {
+    position: fixed;
+    top: 100px;
+    display: inline-block;
+    width: 250px;
+    opacity: 0;
+    transition: top 1s ease;
+    -moz-transition: top 1s ease;
+    -webkit-transition: top 1s ease;
+    .tocContent {
+      width: 200px;
+      padding: 20px 20px 5px 20px;
+      background: rgb(233, 241, 246);
+      border-radius: 5px;
+      box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.125);  
+    }
+    .toc {
+      font-size: 14px;
+      .toc-child {
+        font-size: 12px;
+      }
+    }
+  }
+  .rightAnim {
+    animation: rightAnim 2s ease 2s forwards;
+    -moz-animation: rightAnim 2s ease 2s forwards;
+    -webkit-animation: rightAnim 2s ease 2s forwards;
+  }
+  @keyframes rightAnim {
+    to {
+      opacity: 1;
+    }
+  }
+  .tocContent a {
+    text-decoration: none;
+    color: #161823;
+  }
+  .tocContent a:hover{
+    color: green;
+  }
+  .tocContent ol {
+    padding: 0;
+    list-style: none;
+  }
+  .toc-child {
+    margin-left: 20px;
+  }
+  .toc .toc-item .toc-link-green{
+    color: green;
+  }
+}
+.code {
+  position: relative;
+  width: 100%;
+  background: rgb(199, 226, 222);
+  border-radius: 5px;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.125);  
+  font-size: 12px;
+  overflow: hidden;
+  .codeHeight {
+    width: 750px;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 10px;
+    border-radius: 0 5px 0 5px;
+    background: rgb(175, 201, 197);
+  }
+  code.has-numbering {
+    position: absolute;
+    top: 30px;
+    left: 30px;;
+    line-height: 20px;
+    word-wrap: normal;  //是否允许单词单词断点换行
+    word-break: keep-all;  //单词超过容器宽度，换行
+    white-space: pre;  //设置文本是否换行
+  }
+  .pre-numbering {
+    position: absolute;
+    top: 30px;
+    left: 10px;
+    width: 20px;
+    margin: 0;
+    padding: 0;
+    line-height: 20px;
+    list-style: none;
+  }
+}
+.footer {
+  width: 100%;
+  height: 100px;
+  text-align: center;
+  line-height: 100px;
+  color: #cccccc;
+  font-size: 14px;
+  background: #161823;
+  a {
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
