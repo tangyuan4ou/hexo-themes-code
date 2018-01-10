@@ -1,3 +1,5 @@
+@import './../_variables.styl';
+
 .main {
   position: relative;
   width: 100%;
@@ -6,25 +8,18 @@
 }
 .indexContainer {
   position: relative;
-  width: 1200px;
-  margin: 0 auto;
-}
-.bgCanvas {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-//首页canvas
-.indexBg {
-  position: relative;    
   width: 100%;
-  background-size: 100%;
-  .title {
-    margin: 0;
-    width: 100%;
+}
+
+//标题
+.t_wrap {
     position: absolute;
-    text-align: center;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1200px;
+  .title {
     font-family: 'Clicker Script';
+    text-align: center;
     font-size: 100px;
     font-weight: bold;
     color: #000000;
