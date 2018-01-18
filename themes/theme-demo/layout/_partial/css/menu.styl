@@ -50,18 +50,18 @@
     background-color: #ffffff;
   }
   .menu-section.on {
+    display: block;
     z-index: 10;
     width: 100%;
     height: 100%;
-    display: block;
     background-color: #ffffff;
     position: absolute;
   }
   .searchContainer {
     position: relative;
+    display: inline-block;
     width: 350px;
     margin: 20px 110px 0 0;
-    display: inline-block;
   }
   .search {
     position: absolute;
@@ -74,8 +74,7 @@
   }
   .searchBtn {
     position: absolute;
-    top: -5px;
-    right: 5px;
+    top: -5px; right: 5px;
     width: 30px;
     height: 28px;
     border: 0;
@@ -96,7 +95,6 @@
   display: none;
   position: absolute;
   top: 0; left: 0;
-  opacity: 1;
   width: 100%;
   min-width: 1200px;
   .menuBg {
@@ -118,13 +116,13 @@
     overflow: hidden;
     .list {
       width: 35%;
-      transform: skewX(-15deg) translateX(-80px);
-      transition: all 1s ease;
       background: #ffffff;
       text-align: center;
       font-size: 50px;
       list-style: none;
       opacity: 0;
+      transform: skewX(-15deg) translateX(-80px);
+      transition: all 1s ease;
       a {
         display: inline-block;
         width: 100%;
@@ -146,8 +144,6 @@
   display: block;
   position: absolute;
   top: 0; left: 0;
-  opacity: 1;
-  width: 100%;
 
 //呼入动画
 .fadeInUp {
@@ -268,5 +264,24 @@
   .blogList:hover {
     background: rgb(233, 241, 246);
     color: #000000;
+  }
+}
+
+//黑色背景nav样式
+.bNav {
+  position: absolute;
+  .name {
+    color: #ffffff;
+  }
+  .navBtn {
+    background-color: #ffffff;
+  }
+  .search {
+    background-color: #161823;
+    border-color: #ffffff;
+    color: #ffffff;
+  }
+  .searchBtn {
+    color: #ffffff;
   }
 }
